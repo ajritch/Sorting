@@ -1,4 +1,5 @@
 import random
+import datetime
 
 #This function uses the bubble sort algorithm to sort the items in a list
 def bubbleSort(list):
@@ -21,9 +22,14 @@ def bubbleSort(list):
 
 #populate list of random values, sort it
 testlist = []
-for i in range(0, 100):
+for i in range(0, 1000): 
 	testlist.append(random.randint(0, 10000))
 
 print testlist
+start = datetime.datetime.now()
 bubbleSort(testlist)
+finish = datetime.datetime.now()
 print testlist
+print "time spent: ", finish - start
+
+#gets pretty slow at about N = 10000 
